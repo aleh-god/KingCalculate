@@ -8,12 +8,34 @@ public class Main {
 
 
         GameName gameName;
-        gameName = GameName.takeBFG;
-        System.out.println("Игра: " + gameName);
+        String textInputConsole;
 
+        // Запускаем главное меню.
+        try(BufferedReader br = new BufferedReader (new InputStreamReader(System.in))) {
+
+            System.out.println("Добрый день. Вы находитесь в калькуляторе игры Кинг.");
+            System.out.println("1. Для рассчета игры наберите в строке: 1");
+            System.out.println("2. Для загрузки сохраненной игры наберите в строке: 2");
+            System.out.println("3. Для просмотра игровых рекордов наберите в строке: 3");
+            System.out.println("Для выхода наберите в строке: exit");
+            // чтение с консоли
+            while(!(br.readLine()).equals("exit")) {
+                System.out.println("Ввод с консоли: " + br.toString() );
+
+                //if (br.toString() == "1") {}
+            }
+        }
+        catch(IOException ex){
+
+            System.out.println(ex.getMessage());
+        }
+        System.out.println("Спасибо за игру. До новых встреч.");
+
+	/*
         try(BufferedReader br = new BufferedReader (new InputStreamReader(System.in))) {
 
             // чтение с консоли
+            System.out.println("Меню запущено. Для выхода наберите в строке: exit");
             while(!(br.readLine()).equals("exit")) {
 
                 System.out.println("Ввод с консоли: " + br.toString());
@@ -23,20 +45,6 @@ public class Main {
 
             System.out.println(ex.getMessage());
         }
-
-	/*
-	            String text;
-            while(!(text=br.readLine()).equals("ESC")){
-
-                bw.write(text + "\n");
-                bw.flush();
-            }
-        }
-        catch(IOException ex){
-
-            System.out.println(ex.getMessage());
-        }
-
 	1 MetaGame
 	    4 name players
 	    4 ListGame
